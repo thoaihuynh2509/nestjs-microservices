@@ -17,7 +17,7 @@ import {UserModule} from './users/user.module'
       useFactory: (configService: ConfigService) => ({
         uri:
           configService.get<string>('MONGO_URI_USERS') ||
-          'mongodb://localhost:27017/shop_db',
+          'mongodb://localhost:27017/ecom_user_db',
       }),
     }),
 
