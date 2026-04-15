@@ -9,7 +9,7 @@ async function bootstrap() {
   const app = await NestFactory.create(GatewayModule)
   app.enableShutdownHooks()
 
-  const port = process.env.GATEWAY_PORT ?? 3000
+  const port = process.env.GATEWAY_PORT ?? 4000
   await app.listen(port)
 
   logger.log(`Gateway is running on port ${port}`)

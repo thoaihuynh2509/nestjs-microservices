@@ -1,21 +1,22 @@
-import {Prop, SchemaFactory} from '@nestjs/mongoose'
+import {Prop, Schema, SchemaFactory} from '@nestjs/mongoose'
 import {HydratedDocument} from 'mongoose'
 
+@Schema({collection: 'users'})
 export class User {
   @Prop({required: true, unique: true})
-  clerkUserId: string
+  clerkUserId!: string
 
   @Prop({required: true, unique: true})
-  email: string
+  email!: string
 
   @Prop({required: true})
-  name: string
+  name!: string
 
   @Prop({required: true, enum: ['user', 'admin'], default: 'user'})
-  role: 'user' | 'admin'
+  role!: 'user' | 'admin'
 
   @Prop({required: true})
-  lastSeenAt: Date
+  lastSeenAt!: Date
 }
 
 export type UserDocument = HydratedDocument<User>

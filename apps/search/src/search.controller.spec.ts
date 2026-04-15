@@ -15,8 +15,12 @@ describe('SearchController', () => {
   })
 
   describe('root', () => {
-    it('should return "Hello World!"', () => {
-      expect(searchController.getHello()).toBe('Hello World!')
+    it('should return the search service ping payload', () => {
+      expect(searchController.ping()).toEqual({
+        ok: true,
+        service: 'search',
+        time: expect.any(String),
+      })
     })
   })
 })
